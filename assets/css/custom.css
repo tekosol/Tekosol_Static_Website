@@ -1,0 +1,3116 @@
+
+/* ================================================================
+   Skip Navigation Link (Accessibility - WCAG 2.2 AA)
+   ================================================================ */
+.skip-nav-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 10000;
+  background: var(--tk-primary);
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-nav-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-nav-link { transition: none; }
+}
+
+/**
+ * Tekosol Static Website — Custom Bootstrap 5 Theme Stylesheet
+ * 100% Authentic Design Reproduction for Tekosol Business.
+ * Pure semantic styling for Bootstrap 5 without any WordPress/Gutenverse dependencies.
+ */
+
+/* ================================================================
+   1. Design Tokens & Global Typography (Authentic Work Sans Theme)
+   ================================================================ */
+/* Work Sans is loaded via <link rel="stylesheet"> in HTML <head> for optimal render performance */
+
+:root {
+  --tk-primary: #2c7c6c;            /* Authentic Primary Teal */
+  --tk-secondary: #03577a;          /* Authentic Secondary Navy / Deep Teal */
+  --tk-accent-blue: #1e70ea;        /* Accent Blue for links */
+  --tk-dark-heading: #07295a;       /* Dark Navy Headings */
+  --tk-dark-text: #191919;          /* Jet Black Text */
+  --tk-body-text: #555555;          /* Body Gray */
+  --tk-bg-soft: #f7f7f7;            /* Soft Gray Sections & Footer */
+  --tk-bg-dark: #02132d;            /* Dark Navy Services Section */
+  --tk-font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 85px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--tk-body-text);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  overflow-y: visible;
+  position: relative;
+}
+
+/* Guarantee a single root vertical scrollbar and prevent margin collapsing */
+.wp-site-blocks {
+  display: flow-root;
+}
+
+.wp-site-blocks,
+main,
+.site-main,
+.section-wrapper {
+  overflow: visible !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--tk-font-family);
+  color: var(--tk-dark-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--tk-accent-blue);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  color: var(--tk-secondary);
+}
+
+.container {
+  max-width: 1300px;
+}
+
+.container-wide {
+  max-width: 1600px;
+}
+
+/* Authentic Pill Badge Headers (Content Sections) */
+div.header,
+.header:not(.site-header) {
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--tk-dark-text);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+div.header span,
+.header:not(.site-header) span {
+  border: 1px solid var(--tk-dark-text);
+  border-radius: 0px 10px 0px 10px;
+  padding: 1px 6px;
+  margin-right: 4px;
+}
+
+div.header.header-light,
+.header:not(.site-header).header-light {
+  color: #ffffff;
+}
+
+div.header.header-light span,
+.header:not(.site-header).header-light span {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Gradient Titles & Highlights */
+.color-gradient,
+.text-gradient {
+  background-image: linear-gradient(45deg, #2c7c6c, #03577a);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* Custom Read More Arrow Link */
+.custom-link-arrow,
+.links {
+  font-family: var(--tk-font-family);
+  font-weight: 500;
+  font-size: 15px;
+  color: #2c7c6c;
+  background: url('../images/link-arrow.png') no-repeat right top 2px;
+  padding-right: 32px;
+  background-size: 21px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.custom-link-arrow:hover,
+.links:hover {
+  color: var(--tk-secondary);
+  background-position: right top 0px;
+  text-decoration: underline;
+}
+
+/* ================================================================
+   2. Authentic Pill Button with Attached Arrow Badge
+   ================================================================ */
+.primary-btn-box {
+  display: inline-block;
+  padding-right: 45px;
+  position: relative;
+}
+
+.theme-primary-btn {
+  position: relative;
+  display: inline-block;
+  background-color: var(--tk-primary);
+  color: #ffffff !important;
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.theme-primary-btn:hover {
+  background-color: var(--tk-secondary) !important;
+}
+
+.theme-primary-btn::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: -45px;
+  top: 0;
+  background: var(--tk-secondary) url('../images/right-arrow-white.png') center center no-repeat;
+  border-radius: 100px;
+  background-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.theme-primary-btn:hover::after {
+  background-position: center left 18px;
+}
+
+/* Dark variant of button for footer */
+.theme-footer-btn {
+  position: relative;
+  display: inline-block;
+  background-color: #191919;
+  color: #ffffff !important;
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.theme-footer-btn:hover {
+  background-color: var(--tk-secondary) !important;
+}
+
+.theme-footer-btn::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: -45px;
+  top: 0;
+  background: #191919 url('../images/right-arrow-white.png') center center no-repeat;
+  border-radius: 100px;
+  background-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.theme-footer-btn:hover::after {
+  background-color: var(--tk-secondary);
+  background-position: center left 18px;
+}
+
+/* ================================================================
+   3. Header & Bootstrap Navbar
+   ================================================================ */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+}
+
+/* Eliminate margin-collapsing top gap and normalize product head area padding */
+.product-head-area,
+.tmpl-products .guten-element.guten-JkK3Sf,
+.wp-site-blocks > .section-wrapper:first-of-type > .wp-block-gutenverse-section:first-child {
+  margin-top: 0 !important;
+}
+
+.product-head-area {
+  padding-top: 90px !important;
+}
+
+/* ============================================================
+   Services Pages Spacing Normalization (Matching TEK-PAY Reference)
+   Eliminates excessive vertical whitespace between navbar and hero content
+   ============================================================ */
+.tmpl-solutions .guten-element.guten-rRVsh6,
+.tmpl-enterprise-mdm .guten-element.guten-hnFrR1,
+.tmpl-enterprise-dev .guten-element.guten-hnFrR1,
+.tmpl-custom-integration .guten-element.guten-hnFrR1,
+.tmpl-page .guten-element.guten-ow2ZKx,
+.tmpl-page .guten-element.guten-hnFrR1,
+.tmpl-mobile-dev .guten-element.guten-ow2ZKx,
+.tmpl-mobile-dev .guten-element.guten-hnFrR1,
+.tmpl-mis .guten-element.guten-ow2ZKx,
+.tmpl-mis .guten-element.guten-hnFrR1 {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.tmpl-solutions .guten-element.guten-nMzy4u,
+.tmpl-enterprise-mdm .guten-element.guten-VwyT4H,
+.tmpl-enterprise-dev .guten-element.guten-VwyT4H,
+.tmpl-custom-integration .guten-element.guten-VwyT4H,
+.tmpl-page .guten-element.guten-VwyT4H,
+.tmpl-mobile-dev .guten-element.guten-VwyT4H,
+.tmpl-mis .guten-element.guten-VwyT4H {
+  padding-top: 128px !important;
+}
+
+.site-navbar {
+  padding: 15px 0;
+  background-color: rgba(255, 255, 255, 0.19);
+  transition: all 0.35s ease;
+}
+
+.site-navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+  animation: navSlideDown 0.3s ease-out;
+}
+
+@keyframes navSlideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.site-logo img {
+  height: 39px;
+  width: 266px;
+  max-width: 100%;
+  display: block;
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--tk-dark-text);
+  padding: 10px 18px !important;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--tk-primary) !important;
+}
+
+/* Custom Dropdown matching 0 30px 0 30px border radius */
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  border: 1px solid var(--tk-primary);
+  border-radius: 0px 30px 0px 30px;
+  box-shadow: 0 4px 18px rgba(45, 45, 45, 0.08);
+  padding: 20px;
+  min-width: 300px;
+  transition: all 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    margin-top: 0;
+  }
+}
+
+.dropdown-item {
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tk-dark-text);
+  padding: 7px 10px;
+  border-radius: 4px;
+  line-height: 1.35;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: transparent;
+  color: var(--tk-secondary);
+  padding-left: 15px;
+}
+
+/* Navbar Reach Us Button */
+.btn-reach-us {
+  background-color: var(--tk-primary);
+  color: #ffffff !important;
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-reach-us:hover {
+  background-color: var(--tk-secondary);
+  color: #ffffff !important;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: var(--tk-primary);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* ================================================================
+   4. Hero Section (main-header)
+   ================================================================ */
+.hero-section {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Animated Gradient Heading */
+.hero-title {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--tk-primary);
+  background: -webkit-linear-gradient(left, #2c7c6c, #03577a, #2c7c6c);
+  background-size: 1600px 200px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animationgradienttitle 3s infinite forwards;
+  max-width: 700px;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+@keyframes animationgradienttitle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 40px !important;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 32px !important;
+  }
+}
+
+.hero-subtitle {
+  font-family: var(--tk-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(2, 19, 45, 0.9);
+  line-height: 1.5;
+  margin: 25px 0 35px;
+  max-width: 650px;
+}
+
+@media (max-width: 767px) {
+  .hero-subtitle {
+    font-size: 15px;
+    margin: 15px 0 25px;
+  }
+}
+
+/* Bird GIF and 19-div Rotating Ripple Loader */
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 440px;
+}
+
+.hero-bird-img {
+  position: relative;
+  z-index: 2;
+  max-height: 410px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.circles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.loader {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.loader div {
+  position: absolute;
+  border: 1px solid var(--tk-primary);
+  opacity: 1;
+  border-radius: 70%;
+  animation: lds-ripple 10s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loader div:nth-child(2) { animation-delay: -0.5s; }
+.loader div:nth-child(3) { animation-delay: -1s; }
+.loader div:nth-child(4) { animation-delay: -1.5s; }
+.loader div:nth-child(5) { animation-delay: -2s; }
+.loader div:nth-child(6) { animation-delay: -2.5s; }
+.loader div:nth-child(7) { animation-delay: -3s; }
+.loader div:nth-child(8) { animation-delay: -3.5s; }
+.loader div:nth-child(9) { animation-delay: -4s; }
+.loader div:nth-child(10){ animation-delay: -4.5s; }
+.loader div:nth-child(11){ animation-delay: -5s; }
+.loader div:nth-child(12){ animation-delay: -5.5s; }
+.loader div:nth-child(13){ animation-delay: -6s; }
+.loader div:nth-child(14){ animation-delay: -6.5s; }
+.loader div:nth-child(15){ animation-delay: -7s; }
+.loader div:nth-child(16){ animation-delay: -7.5s; }
+.loader div:nth-child(17){ animation-delay: -8s; }
+.loader div:nth-child(18){ animation-delay: -8.5s; }
+.loader div:nth-child(19){ animation-delay: -9s; }
+
+@keyframes lds-ripple {
+  0% { top: 360px; left: 360px; width: 0; height: 0; opacity: 0; }
+  4.9% { top: 360px; left: 360px; width: 0; height: 0; opacity: 0; }
+  5% { top: 360px; left: 360px; width: 0; height: 0; opacity: 1; }
+  100% { top: 0px; left: 0px; width: 400px; height: 400px; opacity: 0; }
+}
+
+/* ================================================================
+   5. Who We Are Section (Authentic Layered Architectural Layout)
+   ================================================================ */
+.about-block-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  /*overflow: hidden;*/
+  min-height: 560px;
+}
+
+.home-about-bg {
+  background: #f7f7f7;
+  height: 472px;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.home-about-bg::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  background: url('../images/pattern-top.png') no-repeat top center;
+  width: 330px;
+  height: 350px;
+  background-size: cover;
+  right: 8%;
+  pointer-events: none;
+}
+
+.home-about-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  background: url('../images/pattern-bottom.png') no-repeat top center;
+  width: 354px;
+  height: 503px;
+  background-size: cover;
+  left: 8%;
+  pointer-events: none;
+}
+
+.home-about-block {
+  position: absolute;
+  padding-top: 28px;
+  top: 50px;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.home-about-block .left-col {
+  min-height: 480px;
+}
+
+.home-about-block .about-readmore-wrap {
+  position: absolute;
+  bottom: 20px;
+}
+
+.about-title {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--tk-dark-heading);
+  line-height: 1.25;
+  margin-bottom: 25px;
+}
+
+.about-desc {
+  font-size: 15px;
+  color: var(--tk-body-text);
+  line-height: 1.7;
+  margin: 25px 0;
+}
+
+@media (max-width: 991px) {
+  .about-block-section {
+    padding-top: 0;
+    padding-bottom: 30px;
+    min-height: auto;
+  }
+  .home-about-bg {
+    display: none;
+  }
+  .home-about-block {
+    position: relative;
+    top: 0;
+    background: #f7f7f7;
+    padding: 35px 20px;
+    border-radius: 10px;
+  }
+  .home-about-block .left-col {
+    min-height: auto;
+    margin-bottom: 25px;
+  }
+  .home-about-block .about-readmore-wrap {
+    position: relative;
+    bottom: auto;
+    margin-top: 15px;
+  }
+  .about-title {
+    font-size: 30px;
+  }
+}
+
+/* ================================================================
+   6. Clients Section (client-testi & client-home)
+   ================================================================ */
+.clients-section {
+  padding: 50px 0 60px;
+  background-color: #ffffff;
+}
+
+.client-title {
+  background-image: linear-gradient(45deg, #2c7c6c, #03577a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .client-title {
+    font-size: 30px;
+  }
+}
+
+.client-logos-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================================================================
+   7. Services Section (services-home & solution-boxes)
+   ================================================================ */
+.services-section {
+  position: relative;
+  padding: 100px 0 60px;
+  background: linear-gradient(rgba(2, 19, 45, 0.94), rgba(2, 19, 45, 0.94)),
+              url('../images/service-bg.jpg') no-repeat center center / cover;
+  color: #ffffff;
+}
+
+.services-headline {
+  font-size: 45px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .services-headline::after {
+    content: "";
+    width: 40px;
+    height: 150px;
+    position: absolute;
+    right: -45px;
+    top: -10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(20deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .services-headline {
+    font-size: 28px;
+  }
+}
+
+.services-intro {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.7;
+  padding-top: 15px;
+}
+
+/* ================================================================
+   Authentic 3D Hover Flip Cards (.service-box)
+   ================================================================ */
+.service-box {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(44, 124, 108, 0.4);
+  background: linear-gradient(165deg, rgba(2, 22, 54, 0.88) 0%, rgba(2, 14, 34, 0.94) 100%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.45s ease,
+              border-color 0.45s ease,
+              box-shadow 0.45s ease;
+  will-change: transform;
+}
+
+/* 3D Flip Trigger on Hover, Focus, and Touch/Keyboard Toggle */
+.content-section .service-box:hover,
+.content-section .service-box:focus-visible,
+.content-section .service-box:focus-within,
+.content-section .service-box.is-flipped,
+.home-page .content-section .service-box:hover,
+.home-page .content-section .service-box:focus-visible,
+.home-page .content-section .service-box:focus-within,
+.home-page .content-section .service-box.is-flipped,
+.service-box:hover,
+.service-box:focus-visible,
+.service-box:focus-within,
+.service-box.is-flipped {
+  transform: perspective(1000px) rotateY(360deg) translateY(-8px) !important;
+  background: linear-gradient(150deg, #056a94 0%, #034466 40%, #021a3a 100%) !important;
+  border-color: #2c7c6c !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(44, 124, 108, 0.4) !important;
+}
+
+.service-box-icon {
+  height: 52px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.service-box-icon img {
+  max-height: 48px;
+  max-width: 100%;
+  filter: drop-shadow(0 4px 10px rgba(44, 124, 108, 0.35));
+  transition: transform 0.4s ease;
+}
+
+.service-box:hover .service-box-icon img {
+  transform: scale(1.08);
+}
+
+.service-box-title {
+  font-family: var(--tk-font-family);
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.service-box-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.service-box-link {
+  font-family: var(--tk-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--tk-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.service-box-link:hover {
+  background-color: var(--tk-secondary);
+  color: #ffffff;
+  gap: 12px;
+  box-shadow: 0 6px 18px rgba(3, 87, 122, 0.5);
+}
+
+/* ================================================================
+   8. Insights Section (blog-home & The Tekosol Times)
+   ================================================================ */
+.insights-section {
+  padding: 100px 0 80px;
+  /*background-color: var(--tk-bg-soft);*/
+}
+
+.insights-title {
+  background-image: linear-gradient(45deg, #2c7c6c, #03577a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  .insights-title {
+    font-size: 32px;
+  }
+}
+
+.insight-card-item {
+  background: #ffffff;
+  border-radius: 0px 25px 0px 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.insight-card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.insight-thumb-box {
+  height: 140px;
+  overflow: hidden;
+}
+
+.insight-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.insight-card-item:hover .insight-thumb-box img {
+  transform: scale(1.06);
+}
+
+.insight-content-box {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.insight-date {
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.insight-headline {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--tk-dark-heading);
+  line-height: 1.35;
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.insight-headline a {
+  color: var(--tk-dark-heading);
+}
+
+.insight-headline a:hover {
+  color: var(--tk-primary);
+}
+
+.insight-summary {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.insight-readmore-link {
+  font-family: var(--tk-font-family);
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c7c6c;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.insight-readmore-link:hover {
+  color: var(--tk-secondary);
+  gap: 10px;
+}
+
+.pro-points-box {
+  padding-top: 90px;
+}
+
+.pro-points-box img {
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgb(255, 255, 255);
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================================================================
+   9. CTA Section (Authentic Primary Teal Background #2c7c6c)
+   ================================================================ */
+.cta-section {
+  position: relative;
+  padding: 70px 0;
+  background-color: var(--tk-primary);
+  background-image: url('../images/connect-bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.cta-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 767px) {
+  .cta-title {
+    font-size: 28px;
+  }
+}
+
+.cta-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.cta-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ================================================================
+   10. Footer (Authentic Soft-Gray Background #f7f7f7)
+   ================================================================ */
+.footer-shape-divider {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-shape-divider.bg-teal {
+  background-color: var(--tk-primary);
+}
+
+.footer-shape-divider.bg-dark {
+  background-color: var(--tk-bg-dark);
+}
+
+.footer-shape-divider.bg-white {
+  background-color: #ffffff;
+}
+
+.footer-shape-divider.bg-soft {
+  background-color: var(--tk-bg-soft);
+}
+
+.footer-shape-divider svg {
+  display: block;
+  width: 100%;
+  height: 55px;
+}
+
+.site-footer {
+  background-color: var(--tk-bg-soft);
+  color: var(--tk-dark-text);
+  padding: 50px 0 35px;
+  position: relative;
+}
+
+.footer-talk-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--tk-dark-heading);
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-talk-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-nav-divider {
+  border-top: 1px solid #cccccc;
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.footer-menu-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-menu-links a {
+  font-family: var(--tk-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tk-dark-text);
+  transition: color 0.2s ease;
+}
+
+.footer-menu-links a:hover {
+  color: var(--tk-primary);
+}
+
+@media (min-width: 992px) {
+  .tekosol-footer-col {
+    padding-left: 45px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tekosol-footer-col {
+    margin-top: 35px;
+  }
+}
+
+.footer-logo {
+  max-width: 100%;
+  width: 220px;
+  height: auto;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: var(--tk-dark-text);
+  margin-bottom: 6px;
+}
+
+.footer-terms-links {
+  font-size: 14px;
+  color: var(--tk-dark-text);
+  margin-bottom: 10px;
+}
+
+.footer-terms-links a {
+  color: var(--tk-dark-text);
+  padding-right: 15px;
+  border-right: 1px solid #cccccc;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.footer-terms-links a:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.footer-locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: var(--tk-dark-text);
+  font-weight: 400;
+  margin-bottom: 22px;
+}
+
+.footer-locations span {
+  padding-right: 15px;
+  border-right: 1px solid #cccccc;
+}
+
+.footer-locations span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--tk-dark-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.social-btn:hover {
+  background: var(--tk-primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(44, 124, 108, 0.35);
+}
+
+
+/* ================================================================
+   11. Subpage Common Styles (Idea to Implementation Section)
+   ================================================================ */
+.process-section {
+  padding: 90px 0;
+  background: linear-gradient(rgba(2, 19, 45, 0.96), rgba(2, 19, 45, 0.96)),
+              url('../images/service-bg.jpg') no-repeat center center / cover;
+  color: #ffffff;
+}
+
+
+/* ================================================================
+   15. Authentic About Us Page Styles
+   ================================================================ */
+
+/* Hero Section */
+.about-hero-section {
+  padding-top: 90px;
+  padding-bottom: 70px;
+  background-color: #ffffff;
+}
+
+.about-hero-title {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--tk-dark-heading);
+  line-height: 1.25;
+}
+
+.about-hero-text {
+  font-size: 16px;
+  color: var(--tk-body-text);
+  line-height: 1.75;
+  padding-top: 15px;
+}
+
+/* Handshake Cover Banner */
+.about-cover-banner {
+  position: relative;
+  min-height: 563px;
+  overflow: hidden;
+  background-color: #03577a;
+  padding-bottom: 90px;
+}
+
+.about-cover-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-cover-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% 39%;
+}
+
+.about-cover-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(311deg, rgba(44, 124, 108, 0.90) 0%, rgba(3, 87, 122, 0.90) 100%);
+}
+
+.about-cover-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 90px;
+}
+
+.about-cover-title {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.about-cover-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 18px;
+}
+
+.about-cover-quote {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #ffffff;
+  border: none;
+  margin-top: 50px;
+  padding: 0;
+}
+
+/* Mission & Vision Cards */
+.about-mission-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #ffffff;
+}
+
+.about-mission-card {
+  background-color: #f8fafc;
+  border-radius: 0 30px 0 30px;
+  padding: 45px 40px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.about-mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.about-mission-icon {
+  font-size: 40px;
+  color: var(--tk-secondary);
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.about-mission-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--tk-dark-heading);
+  margin-bottom: 15px;
+}
+
+.about-mission-desc {
+  font-size: 15px;
+  color: var(--tk-body-text);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* Core Values */
+.about-values-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #ffffff;
+}
+
+.about-values-hero-title {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--tk-dark-heading);
+  line-height: 1.25;
+}
+
+.about-value-row {
+  padding: 35px 0;
+  border-bottom: 1px solid #e8ebee;
+  align-items: center;
+}
+
+.about-value-row:first-of-type {
+  border-top: 1px solid #e8ebee;
+}
+
+.about-value-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tk-primary);
+  margin-bottom: 0;
+}
+
+.about-value-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--tk-dark-heading);
+  margin-bottom: 0;
+}
+
+.about-value-icon-box {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--tk-primary);
+  background: rgba(44, 124, 108, 0.08);
+}
+
+.about-value-desc {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--tk-body-text);
+  margin-bottom: 0;
+}
+
+/* Idea to Implementation Process Banner */
+.about-process-section {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: #ffffff;
+}
+
+.about-process-banner {
+  background: linear-gradient(190deg, rgba(44, 124, 108, 1) 0%, rgba(3, 87, 122, 1) 97.6%);
+  border-radius: 0 30px 0 30px;
+  padding: 70px 40px 60px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-process-title {
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+.about-process-step {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+
+@media (max-width: 991px) {
+  .about-hero-title,
+  .about-cover-title,
+  .about-values-hero-title {
+    font-size: 32px;
+  }
+  .about-cover-quote p {
+    font-size: 20px !important;
+  }
+  .about-value-row {
+    padding: 25px 0;
+  }
+  .about-value-title {
+    font-size: 24px;
+  }
+  .about-value-desc {
+    font-size: 16px;
+  }
+}
+
+/* ================================================================
+   Responsive Enhancements & Cross-Device Layout Stabilizations
+   ================================================================ */
+
+/* 1. Mobile & Tablet Navbar Panel */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-top: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-nav .nav-link {
+    padding: 8px 0 !important;
+  }
+  .navbar-collapse .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding: 6px 0 10px 15px;
+    min-width: 100%;
+    background-color: #f7f9fa;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .btn-reach-us {
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+/* 2. Container & Row Gutter Normalization on Tablet & Mobile */
+@media (max-width: 1199px) {
+  .about-hero-section .row.g-5,
+  .about-cover-banner .row.g-5,
+  .about-values-section .row.g-5 {
+    --bs-gutter-x: 1.5rem !important;
+  }
+}
+
+/* 3. Small Screen & Mobile Spacing Stabilizations */
+@media (max-width: 767px) {
+  /* Prevent Gutenberg offset cards from spilling out on mobile */
+  .guten-element.guten-k9v6Og {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Process banner and steps scaling on mobile */
+  .about-process-banner {
+    padding: 40px 15px 30px !important;
+  }
+  .about-process-step {
+    font-size: 13px !important;
+    letter-spacing: 2px !important;
+  }
+  .about-process-title {
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+/* ================================================================
+   Scroll-Triggered Animation Engine (GPU-Accelerated)
+   ================================================================ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ================================================================
+   Global Slow, Elegant Scroll-Triggered Animation Engine
+   Gradual 1.8s slide up from the bottom and fade into visibility
+   Starting when section reaches ~30% of the viewport (Site-Wide)
+   ================================================================ */
+.content-section,
+.scroll-section,
+.home-page .content-section,
+.home-page .scroll-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.content-section.is-revealed,
+.scroll-section.is-revealed,
+.home-page .content-section.is-revealed,
+.home-page .scroll-section.is-revealed,
+.is-revealed .content-section,
+.is-revealed .section-wrapper[data-id="fDElP4"],
+.is-revealed [data-id="fDElP4"],
+.is-revealed .guten-fDElP4,
+.section-wrapper[data-id="fDElP4"].is-revealed,
+[data-id="fDElP4"].is-revealed,
+.guten-fDElP4.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Primary button boxes: Smooth Left-to-Right reveal (Site-Wide across all pages) */
+.primary-btn-box,
+.primary-btn,
+.guten-button-wrapper,
+.content-section .primary-btn-box,
+.content-section .primary-btn,
+.content-section .guten-button-wrapper,
+.hero-section .primary-btn-box,
+.hero-section .primary-btn,
+.about-hero-section .primary-btn-box,
+.page-header .primary-btn,
+.site-footer .primary-btn-box,
+footer .primary-btn-box,
+.home-page .hero-section .primary-btn-box,
+.home-page .content-section .primary-btn-box {
+  opacity: 0;
+  transform: translateX(-45px);
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.35s,
+              transform 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.35s;
+  will-change: opacity, transform;
+}
+
+.is-revealed .primary-btn-box,
+.is-revealed .primary-btn,
+.is-revealed .guten-button-wrapper,
+.content-section.is-revealed .primary-btn-box,
+.content-section.is-revealed .primary-btn,
+.content-section.is-revealed .guten-button-wrapper,
+.section-wrapper.is-revealed .primary-btn-box,
+[data-id="fDElP4"].is-revealed .primary-btn-box,
+.guten-fDElP4.is-revealed .primary-btn-box,
+.is-revealed [data-id="fDElP4"] .primary-btn-box,
+.is-revealed .guten-fDElP4 .primary-btn-box,
+.hero-section.is-revealed .primary-btn-box,
+.hero-section.is-revealed .primary-btn,
+.about-hero-section.is-revealed .primary-btn-box,
+.page-header.is-revealed .primary-btn,
+.site-footer.is-revealed .primary-btn-box,
+footer.is-revealed .primary-btn-box,
+.content-section:first-of-type.is-revealed .primary-btn-box,
+.content-section:first-of-type.is-revealed .primary-btn,
+.content-section:first-of-type.is-revealed .guten-button-wrapper,
+.home-page .hero-section.is-revealed .primary-btn-box,
+.home-page .content-section.is-revealed .primary-btn-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure guten-fDElP4 call-to-action banner is styled and clearly visible across all subpages */
+.guten-fDElP4 {
+  background-color: #03577A;
+  background-image: url(../images/connect-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  border-radius: 0 30px 0 30px;
+  display: block;
+  visibility: visible;
+}
+
+.guten-fDElP4 > .guten-background-overlay {
+  background-color: #03577A;
+  opacity: 0.15;
+}
+
+.guten-fDElP4 .wp-block-gutenverse-heading,
+.guten-fDElP4 h3 {
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
+
+/* Header class motion: Top to bottom entrance with smooth reveal */
+.header,
+.content-section .header,
+.home-page .content-section .header {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.2s,
+              transform 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
+  will-change: opacity, transform;
+}
+
+.header.is-revealed,
+.content-section.is-revealed .header,
+.home-page .content-section.is-revealed .header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   Headings (H1, H2, H3, H4) & Content Divs Smooth Bottom-to-Top Reveal (Site-Wide)
+   ================================================================ */
+/* Hero & Page Header Containers on Page Load (Site-Wide):
+   Keep the section container background steady so typography and divs glide upwards without jarring flashes */
+.hero-section,
+.about-hero-section,
+.page-header,
+body > .section-wrapper:first-of-type,
+body > .section-wrapper:first-of-type > section,
+main > section:first-of-type,
+.wp-site-blocks > .section-wrapper:first-of-type,
+.wp-site-blocks > section:first-of-type {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Initial state: Shifted down 35px with opacity 0 (Bottom-to-Top initial state Site-Wide) */
+.hero-section .hero-title,
+.hero-section .hero-subtitle,
+.hero-section .hero-visual-wrapper,
+.about-hero-section h1,
+.about-hero-section .about-hero-title,
+.about-hero-section .about-hero-text,
+.content-section h1,
+.content-section h2,
+.content-section h3,
+.content-section h4,
+.content-section .wp-block-heading,
+.content-section .wp-block-gutenverse-heading,
+.content-section .about-desc,
+.content-section .services-intro,
+.content-section .cta-desc,
+.content-section .cta-subtitle,
+.content-section .about-cover-desc,
+.content-section .about-cover-quote,
+.content-section .text-content-inner,
+.content-section .client-logos-wrapper,
+.content-section .pro-points-box,
+.content-section .tekosol-footer-col,
+.content-section .wp-block-gutenverse-image {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+/* Hero Section & Top Header on Page Load (Smooth Bottom-to-Top Reveal) */
+.hero-section.is-revealed .hero-title,
+.about-hero-section.is-revealed .about-hero-title,
+.about-hero-section.is-revealed h1,
+.page-header.is-revealed h1,
+.content-section:first-of-type.is-revealed h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.hero-section.is-revealed .hero-subtitle,
+.about-hero-section.is-revealed .about-hero-text,
+.about-hero-section.is-revealed h2,
+.page-header.is-revealed h2,
+.content-section:first-of-type.is-revealed h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
+.hero-section.is-revealed .hero-visual-wrapper,
+.about-hero-section.is-revealed .hero-visual-wrapper,
+.content-section:first-of-type.is-revealed .wp-block-gutenverse-image {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.40s;
+}
+
+/* Content Sections on Scroll (H1, H2, H3, H4 & Divs Smooth Bottom-to-Top Reveal Site-Wide) */
+.content-section.is-revealed h1,
+.content-section.is-revealed h2,
+.content-section.is-revealed .wp-block-heading,
+.content-section.is-revealed h1.wp-block-gutenverse-heading,
+.content-section.is-revealed h2.wp-block-gutenverse-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.20s;
+}
+
+.content-section.is-revealed h3,
+.content-section.is-revealed h4,
+.content-section.is-revealed h3.wp-block-gutenverse-heading,
+.content-section.is-revealed h4.wp-block-gutenverse-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.30s;
+}
+
+.content-section.is-revealed .about-desc,
+.content-section.is-revealed .services-intro,
+.content-section.is-revealed .cta-desc,
+.content-section.is-revealed .cta-subtitle,
+.content-section.is-revealed .about-cover-desc,
+.content-section.is-revealed .about-cover-quote,
+.content-section.is-revealed .text-content-inner,
+.content-section.is-revealed .client-logos-wrapper,
+.content-section.is-revealed .pro-points-box,
+.content-section.is-revealed .tekosol-footer-col,
+.content-section.is-revealed .wp-block-gutenverse-image {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+
+/* Card Staggering (Services, Insights, Mission & Values Cards) */
+.content-section .service-box,
+.content-section .insight-card-item,
+.content-section .about-mission-card,
+.content-section .about-values-card,
+.home-page .content-section .service-box,
+.home-page .content-section .insight-card-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.content-section.is-revealed .service-box,
+.content-section.is-revealed .insight-card-item,
+.content-section.is-revealed .about-mission-card,
+.content-section.is-revealed .about-values-card,
+.home-page .content-section.is-revealed .service-box,
+.home-page .content-section.is-revealed .insight-card-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .content-section.is-revealed .col-lg-3:nth-child(1) .service-box,
+  .home-page .content-section.is-revealed .col-lg-3:nth-child(1) .service-box { transition-delay: 0.10s; }
+  .content-section.is-revealed .col-lg-3:nth-child(2) .service-box,
+  .home-page .content-section.is-revealed .col-lg-3:nth-child(2) .service-box { transition-delay: 0.22s; }
+  .content-section.is-revealed .col-lg-3:nth-child(3) .service-box,
+  .home-page .content-section.is-revealed .col-lg-3:nth-child(3) .service-box { transition-delay: 0.34s; }
+  .content-section.is-revealed .col-lg-3:nth-child(4) .service-box,
+  .home-page .content-section.is-revealed .col-lg-3:nth-child(4) .service-box { transition-delay: 0.46s; }
+
+  .content-section.is-revealed .col-md-4:nth-child(1) .insight-card-item,
+  .home-page .content-section.is-revealed .col-md-4:nth-child(1) .insight-card-item { transition-delay: 0.10s; }
+  .content-section.is-revealed .col-md-4:nth-child(2) .insight-card-item,
+  .home-page .content-section.is-revealed .col-md-4:nth-child(2) .insight-card-item { transition-delay: 0.24s; }
+  .content-section.is-revealed .col-md-4:nth-child(3) .insight-card-item,
+  .home-page .content-section.is-revealed .col-md-4:nth-child(3) .insight-card-item { transition-delay: 0.38s; }
+
+  .content-section.is-revealed .col-lg-6:nth-child(1) .about-mission-card,
+  .content-section.is-revealed .col-lg-6:nth-child(1) .about-values-card { transition-delay: 0.15s; }
+  .content-section.is-revealed .col-lg-6:nth-child(2) .about-mission-card,
+  .content-section.is-revealed .col-lg-6:nth-child(2) .about-values-card { transition-delay: 0.30s; }
+}
+
+.content-section.is-revealed .service-box:hover,
+.content-section.is-revealed .service-box:focus-within,
+.content-section.is-revealed .service-box.is-flipped,
+.home-page .content-section.is-revealed .service-box:hover,
+.home-page .content-section.is-revealed .service-box:focus-within,
+.home-page .content-section.is-revealed .service-box.is-flipped {
+  transform: perspective(1000px) rotateY(360deg) translateY(-8px) !important;
+  background: linear-gradient(150deg, #056a94 0%, #034466 40%, #021a3a 100%) !important;
+  border-color: #2c7c6c !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(44, 124, 108, 0.4) !important;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.45s ease,
+              border-color 0.45s ease,
+              box-shadow 0.45s ease !important;
+  transition-delay: 0s !important;
+}
+
+.content-section.is-revealed .insight-card-item:hover,
+.home-page .content-section.is-revealed .insight-card-item:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* ================================================================
+   Lenis Smooth Scroll Base Styles
+   ================================================================ */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .content-section,
+  .scroll-section,
+  .content-section .primary-btn-box,
+  .content-section .primary-btn,
+  .content-section .guten-button-wrapper,
+  .content-section .header,
+  .content-section .service-box,
+  .content-section .insight-card-item,
+  .content-section .about-mission-card,
+  .content-section .about-values-card,
+  .hero-section,
+  .about-hero-section,
+  .page-header,
+  .hero-title,
+  .hero-subtitle,
+  .hero-visual-wrapper,
+  .about-hero-title,
+  .about-hero-text,
+  .content-section h1,
+  .content-section h2,
+  .content-section h3,
+  .content-section h4,
+  .content-section .wp-block-heading,
+  .content-section .wp-block-gutenverse-heading,
+  .content-section .about-desc,
+  .content-section .services-intro,
+  .content-section .cta-desc,
+  .content-section .cta-subtitle,
+  .content-section .about-cover-desc,
+  .content-section .about-cover-quote,
+  .content-section .text-content-inner,
+  .content-section .client-logos-wrapper,
+  .content-section .pro-points-box,
+  .content-section .tekosol-footer-col,
+  .content-section .wp-block-gutenverse-image,
+  .site-header.header,
+  header.header {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ================================================================
+   Configurable Header Motion & Opacity Animation (.header)
+   Initial state: slides from top to bottom with smooth motion and opacity fade
+   ================================================================ */
+.header,
+.site-header.header,
+header.header {
+  opacity: 0;
+  transform: translateY(-40px);
+  will-change: opacity, transform;
+}
+
+.header.is-revealed,
+.site-header.header.is-revealed,
+header.header.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   Revoke H3, H2 & content divs bottom-to-top entrance animation exclusively on Contact-Us page (.tmpl-contact)
+   Remaining section scroll animations and layout remain fully in place
+   ================================================================ */
+.tmpl-contact h1,
+.tmpl-contact h2,
+.tmpl-contact h3,
+.tmpl-contact h4,
+.tmpl-contact .wp-block-heading,
+.tmpl-contact .wp-block-gutenverse-heading,
+.tmpl-contact .content-section h1,
+.tmpl-contact .content-section h2,
+.tmpl-contact .content-section h3,
+.tmpl-contact .content-section h4,
+.tmpl-contact .content-section .wp-block-heading,
+.tmpl-contact .content-section .wp-block-gutenverse-heading,
+.tmpl-contact .text-content-inner,
+.tmpl-contact .content-section .text-content-inner,
+.tmpl-contact .content-section .tekosol-footer-col,
+.tmpl-contact .content-section .wp-block-gutenverse-image {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ================================================================
+   Contact Us Page Responsive Alignment & Layout (.tmpl-contact)
+   ================================================================ */
+@media (max-width: 991.98px) {
+  /* Hero intro section stacks on tablet/mobile */
+  .tmpl-contact .guten-eolQYf,
+  .tmpl-contact .guten-fnDbez {
+    width: 100% !important;
+  }
+  .tmpl-contact .guten-fnDbez {
+    margin-top: 20px;
+    padding-top: 0 !important;
+  }
+}
+
+
+/* ================================================================
+   ICON ANIMATION SYSTEM (.gtn & <i>)
+   Professional, hardware-accelerated icon interaction system.
+   Configurable variables, category-specific animations, click feedback,
+   smooth color/appearance transitions, and accessibility support.
+   ================================================================ */
+
+:root {
+  /* Configurable Animation Timings & Easing */
+  --icon-anim-duration-fast: 0.2s;
+  --icon-anim-duration: 0.35s;
+  --icon-anim-duration-slow: 0.6s;
+  --icon-anim-ease: cubic-bezier(0.34, 1.56, 0.64, 1);       /* Smooth spring ease */
+  --icon-anim-ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);    /* Silky deceleration */
+  --icon-anim-delay: 0s;
+
+  /* Configurable Scales */
+  --icon-hover-scale: 1.15;
+  --icon-active-scale: 0.92;
+
+  /* Configurable Motion Offsets & Angles */
+  --icon-lift-y: -3px;
+  --icon-slide-x: 5px;
+  --icon-rotate-angle: 90deg;
+  --icon-rotate-refresh: 180deg;
+
+  /* Configurable Glows & Shadows */
+  --icon-glow-shadow: 0 4px 12px rgba(44, 124, 108, 0.35);
+  --icon-glow-social: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --icon-glow-star: 0 0 10px rgba(255, 193, 7, 0.6);
+  --icon-glow-heart: 0 0 10px rgba(220, 53, 69, 0.5);
+  --icon-glow-check: 0 0 8px rgba(40, 167, 69, 0.45);
+}
+
+/* 1. Base Universal Transition for all i and .gtn elements */
+i:not(.fa-spin),
+.gtn,
+[class*=" gtn-"],
+[class^="gtn-"] {
+  display: inline-block;
+  vertical-align: middle;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: 
+    transform var(--icon-anim-duration) var(--icon-anim-ease) var(--icon-anim-delay),
+    color var(--icon-anim-duration-fast) ease var(--icon-anim-delay),
+    background-color var(--icon-anim-duration-fast) ease var(--icon-anim-delay),
+    border-color var(--icon-anim-duration-fast) ease var(--icon-anim-delay),
+    box-shadow var(--icon-anim-duration) ease var(--icon-anim-delay),
+    filter var(--icon-anim-duration) ease var(--icon-anim-delay),
+    opacity var(--icon-anim-duration-fast) ease var(--icon-anim-delay);
+  will-change: transform;
+}
+
+/* 2. Tactile Click / Tap Interaction */
+i:not(.fa-spin):active,
+.gtn:active,
+a:active > i:not(.fa-spin),
+a:active > .gtn,
+button:active > i:not(.fa-spin),
+button:active > .gtn,
+.btn:active i:not(.fa-spin),
+.btn:active .gtn,
+.social-btn:active i {
+  transform: scale(var(--icon-active-scale)) !important;
+  transition-duration: 0.1s !important;
+}
+
+/* 3. General Default Hover for Any .gtn or i Elements */
+i:not(.fa-spin):hover,
+.gtn:hover,
+[class*=" gtn-"]:hover,
+[class^="gtn-"]:hover,
+a:hover > i:not(.fa-spin),
+a:hover > .gtn,
+button:hover > i:not(.fa-spin),
+button:hover > .gtn,
+.guten-icon-wrapper:hover i,
+.guten-icon-wrapper:hover .gtn {
+  transform: translateY(var(--icon-lift-y)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(0 3px 8px rgba(44, 124, 108, 0.25)) !important;
+}
+
+/* 4. Category A: Directional & Arrow Icons (Arrow Slide) */
+/* Right-pointing arrows */
+.fa-arrow-right,
+.fa-chevron-right,
+.fa-angle-right,
+.fa-angle-double-right,
+.fa-caret-right,
+.fa-long-arrow-alt-right,
+.gtn-arrow-right-line,
+.gtn-chevron-right-line,
+.gtn-right-arrow-light,
+.gtn-right-arrow1-light,
+.gtn-right-arrow2-light,
+.gtn-double-angle-pointing-to-right-light {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease-smooth) var(--icon-anim-delay);
+}
+
+.fa-arrow-right:hover,
+.fa-chevron-right:hover,
+.gtn-arrow-right-line:hover,
+.gtn-right-arrow-light:hover,
+a:hover > .fa-arrow-right,
+a:hover > .fa-chevron-right,
+a:hover > .gtn-arrow-right-line,
+a:hover > .gtn-right-arrow-light,
+button:hover > .fa-arrow-right,
+button:hover > .fa-chevron-right,
+.btn:hover .fa-arrow-right,
+.btn-arrow:hover .fa-arrow-right,
+.theme-footer-btn:hover .fa-arrow-right,
+.primary-btn-box:hover .fa-arrow-right {
+  transform: translateX(var(--icon-slide-x)) scale(1.08) !important;
+}
+
+/* Left-pointing arrows */
+.fa-arrow-left,
+.fa-chevron-left,
+.fa-angle-left,
+.fa-angle-double-left,
+.fa-caret-left,
+.fa-long-arrow-alt-left,
+.gtn-arrow-left-line,
+.gtn-chevron-left-line,
+.gtn-left-arrow-light,
+.gtn-left-arrow2-light,
+.gtn-double-left-chevron-light {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease-smooth) var(--icon-anim-delay);
+}
+
+.fa-arrow-left:hover,
+.fa-chevron-left:hover,
+.gtn-arrow-left-line:hover,
+.gtn-left-arrow-light:hover,
+a:hover > .fa-arrow-left,
+a:hover > .fa-chevron-left,
+a:hover > .gtn-arrow-left-line,
+a:hover > .gtn-left-arrow-light,
+button:hover > .fa-arrow-left,
+button:hover > .fa-chevron-left,
+.btn:hover .fa-arrow-left {
+  transform: translateX(calc(-1 * var(--icon-slide-x))) scale(1.08) !important;
+}
+
+/* Send / Paper plane / Directions / Flying */
+.fa-paper-plane,
+.fa-telegram-plane,
+.gtn-telegram-plane,
+.gtn-paper-plane,
+.gtn-paper-plane-light,
+.gtn-directions-solid {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease) var(--icon-anim-delay);
+}
+
+.fa-paper-plane:hover,
+.fa-telegram-plane:hover,
+.gtn-telegram-plane:hover,
+.gtn-paper-plane:hover,
+.gtn-paper-plane-light:hover,
+.gtn-directions-solid:hover,
+a:hover > .fa-paper-plane,
+a:hover > .fa-telegram-plane,
+a:hover > .gtn-telegram-plane,
+button:hover > .fa-paper-plane,
+button:hover > .fa-telegram-plane {
+  transform: translate(3px, -3px) scale(1.15) !important;
+  filter: drop-shadow(-2px 4px 6px rgba(44, 124, 108, 0.3)) !important;
+}
+
+/* 5. Category B: Settings, Tools & Refresh Icons (Smooth Rotation) */
+/* Settings and cogs */
+.fa-cog,
+.fa-cogs,
+.fa-user-cog,
+.fa-tools,
+.fa-wrench,
+.gtn-settings-light,
+.gtn-settings-2-light,
+.gtn-settings-line,
+.gtn-settings1-light,
+.gtn-user-cog-solid,
+.gtn-cog-light,
+.gtn-cogwheel-light,
+.gtn-cogwheel-outline-light,
+.gtn-tool-line,
+.gtn-tools-light {
+  transition: transform var(--icon-anim-duration-slow) var(--icon-anim-ease) var(--icon-anim-delay), filter var(--icon-anim-duration) ease;
+}
+
+.fa-cog:hover,
+.fa-cogs:hover,
+.fa-user-cog:hover,
+.gtn-settings-light:hover,
+.gtn-settings-2-light:hover,
+.gtn-settings-line:hover,
+.gtn-settings1-light:hover,
+.gtn-user-cog-solid:hover,
+.gtn-cog-light:hover,
+.gtn-cogwheel-light:hover,
+.gtn-cogwheel-outline-light:hover,
+a:hover > .fa-cog,
+a:hover > .gtn-settings-line,
+a:hover > .gtn-settings-light,
+button:hover > .fa-cog,
+.service-box:hover .gtn-settings-line,
+.service-box:hover .gtn-settings-light,
+.service-box:hover .gtn-user-cog-solid,
+.guten-icon-box:hover .gtn-settings-line,
+.guten-icon-box:hover .gtn-settings-light,
+.guten-icon-box:hover .gtn-user-cog-solid,
+.guten-icon-wrapper:hover .gtn-settings-line,
+.guten-icon-wrapper:hover .gtn-settings-light {
+  transform: rotate(var(--icon-rotate-angle)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-shadow)) !important;
+}
+
+/* Sync / Refresh */
+.fa-sync,
+.fa-sync-alt,
+.fa-redo,
+.fa-undo,
+.fa-history,
+.gtn-sync-alt-solid,
+.gtn-sync-solid,
+.gtn-sync-light,
+.gtn-refresh-cw-line,
+.gtn-refresh-ccw-line,
+.gtn-rotate-cw-line,
+.gtn-rotate-ccw-line,
+.gtn-rotate-light {
+  transition: transform var(--icon-anim-duration-slow) var(--icon-anim-ease-smooth) var(--icon-anim-delay);
+}
+
+.fa-sync:hover,
+.fa-sync-alt:hover,
+.fa-redo:hover,
+.gtn-sync-alt-solid:hover,
+.gtn-sync-solid:hover,
+.gtn-sync-light:hover,
+.gtn-refresh-cw-line:hover,
+a:hover > .fa-sync,
+a:hover > .gtn-sync-alt-solid,
+button:hover > .fa-sync,
+.service-box:hover .gtn-sync-alt-solid,
+.guten-icon-box:hover .gtn-sync-alt-solid,
+.guten-icon-wrapper:hover .gtn-sync-alt-solid {
+  transform: rotate(var(--icon-rotate-refresh)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-shadow)) !important;
+}
+
+/* 6. Category C: Notification, Favorite & Heart Icons (Pulse / Heartbeat) */
+@keyframes tkIconHeartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.22); filter: drop-shadow(var(--icon-glow-heart)); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.22); filter: drop-shadow(var(--icon-glow-heart)); }
+  70% { transform: scale(1); }
+  100% { transform: scale(1.12); filter: drop-shadow(var(--icon-glow-heart)); }
+}
+
+@keyframes tkIconBellSwing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg) scale(1.1); }
+  40% { transform: rotate(-15deg) scale(1.1); }
+  60% { transform: rotate(10deg) scale(1.1); }
+  80% { transform: rotate(-10deg) scale(1.1); }
+  100% { transform: rotate(0deg) scale(1.08); }
+}
+
+@keyframes tkIconStarGlow {
+  0% { transform: scale(1) rotate(0deg); filter: none; }
+  50% { transform: scale(1.25) rotate(15deg); filter: drop-shadow(var(--icon-glow-star)); }
+  100% { transform: scale(1.15) rotate(0deg); filter: drop-shadow(var(--icon-glow-star)); }
+}
+
+/* Hearts */
+.fa-heart:hover,
+.fa-heartbeat:hover,
+.gtn-heart:hover,
+.gtn-heart-solid:hover,
+.gtn-heart-line:hover,
+.gtn-heart1-light:hover,
+.gtn-heart-shape-outline-light:hover,
+.gtn-heart-pulse-light:hover,
+.gtn-valentines-heart-light:hover,
+a:hover > .fa-heart,
+a:hover > .gtn-heart,
+.service-box:hover .gtn-heart,
+.service-box:hover .gtn-heart-pulse-light,
+.guten-icon-box:hover .gtn-heart {
+  animation: tkIconHeartbeat 0.8s var(--icon-anim-ease-smooth) forwards !important;
+}
+
+/* Bells & Alarms */
+.fa-bell:hover,
+.gtn-bell:hover,
+.gtn-bell-solid:hover,
+.gtn-bell-line:hover,
+.gtn-bell-light:hover,
+.gtn-alarm-light:hover,
+.gtn-alarm-clock-light:hover,
+a:hover > .fa-bell,
+a:hover > .gtn-bell,
+button:hover > .fa-bell {
+  animation: tkIconBellSwing 0.65s ease-in-out forwards !important;
+}
+
+/* Stars, Awards, Thumbs Up & Ratings */
+.fa-star:hover,
+.fa-award:hover,
+.fa-trophy:hover,
+.gtn-star:hover,
+.gtn-star-solid:hover,
+.gtn-star-line:hover,
+.gtn-star1-light:hover,
+.gtn-star2-light:hover,
+.gtn-award-line:hover,
+.gtn-award-solid:hover,
+.gtn-grin-stars-solid:hover,
+.gtn-thumbs-up-solid:hover,
+.gtn-like-light:hover,
+.gtn-favorites-light:hover,
+a:hover > .fa-star,
+a:hover > .gtn-star1-light,
+a:hover > .gtn-award-line,
+.service-box:hover .gtn-star1-light,
+.service-box:hover .gtn-award-line,
+.service-box:hover .gtn-thumbs-up-solid,
+.guten-icon-box:hover .gtn-star1-light,
+.guten-icon-box:hover .gtn-award-line,
+.guten-icon-wrapper:hover .gtn-award-line,
+.guten-icon-wrapper:hover .gtn-star1-light {
+  animation: tkIconStarGlow 0.65s var(--icon-anim-ease) forwards !important;
+}
+
+/* 7. Category D: Social Media Icons */
+.social-btn i,
+.social-links a i,
+.footer-social-links a i {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease), filter var(--icon-anim-duration) ease, color var(--icon-anim-duration-fast) ease;
+}
+
+.social-btn:hover i,
+.social-links a:hover i,
+.footer-social-links a:hover i,
+a.social-btn:hover i {
+  transform: translateY(var(--icon-lift-y)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-social)) !important;
+}
+
+/* 8. Category E: Checks, Verification & Success Icons */
+.fa-check-circle,
+.fa-check,
+.gtn-check-circle,
+.gtn-check-solid,
+.gtn-tick-light,
+.gtn-checked-light {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease), filter var(--icon-anim-duration) ease, color var(--icon-anim-duration-fast) ease;
+}
+
+.fa-check-circle:hover,
+.gtn-check-circle:hover,
+.gtn-tick-light:hover,
+a:hover > .fa-check-circle,
+a:hover > .gtn-check-circle,
+a:hover > .gtn-tick-light,
+.guten-icon-list-item:hover .fa-check-circle,
+.service-listing:hover .fa-check-circle,
+.list-wrapper a:hover .fa-check-circle {
+  transform: scale(1.22) !important;
+  filter: drop-shadow(var(--icon-glow-check)) !important;
+}
+
+/* 9. Category F: Cloud, Database, Network, Tech & Code Icons */
+.gtn-database-solid,
+.gtn-database1-light,
+.gtn-cloud-computing11-light,
+.gtn-cloud-computing1-light,
+.gtn-code-solid,
+.gtn-laptop-code-solid,
+.gtn-codepen-line,
+.gtn-network-wired-solid,
+.fa-code-branch,
+.fa-database,
+.fa-server,
+.fa-laptop-code {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease), filter var(--icon-anim-duration) ease;
+}
+
+.gtn-database-solid:hover,
+.gtn-database1-light:hover,
+.gtn-cloud-computing11-light:hover,
+.gtn-code-solid:hover,
+.gtn-laptop-code-solid:hover,
+.gtn-network-wired-solid:hover,
+.fa-code-branch:hover,
+a:hover > .gtn-cloud-computing11-light,
+a:hover > .gtn-database-solid,
+.service-box:hover .gtn-cloud-computing11-light,
+.service-box:hover .gtn-database-solid,
+.service-box:hover .gtn-code-solid,
+.service-box:hover .gtn-laptop-code-solid,
+.service-box:hover .gtn-network-wired-solid,
+.guten-icon-box:hover .gtn-cloud-computing11-light,
+.guten-icon-box:hover .gtn-database-solid,
+.guten-icon-box:hover .gtn-network-wired-solid,
+.guten-icon-wrapper:hover .gtn-cloud-computing11-light,
+.guten-icon-wrapper:hover .gtn-database-solid {
+  transform: translateY(var(--icon-lift-y)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-shadow)) !important;
+}
+
+/* 10. Category G: Clock, Time & Speed Icons */
+.fa-clock,
+.far.fa-clock,
+.fas.fa-clock,
+.fa-calendar-alt,
+.gtn-Speed-Clock-light,
+.gtn-tachometer-alt-solid,
+.gtn-clock-solid,
+.gtn-clock-line,
+.gtn-clock1-light,
+.gtn-hours-support-light {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease), filter var(--icon-anim-duration) ease;
+}
+
+.fa-clock:hover,
+.far.fa-clock:hover,
+.fa-calendar-alt:hover,
+.gtn-Speed-Clock-light:hover,
+.gtn-tachometer-alt-solid:hover,
+.gtn-hours-support-light:hover,
+a:hover > .fa-clock,
+a:hover > .far.fa-clock,
+.service-box:hover .gtn-Speed-Clock-light,
+.service-box:hover .gtn-tachometer-alt-solid,
+.service-box:hover .gtn-hours-support-light,
+.insight-card-item:hover .fa-clock,
+.insight-card-item:hover .far.fa-clock,
+.guten-icon-box:hover .gtn-Speed-Clock-light,
+.guten-icon-box:hover .gtn-hours-support-light,
+.guten-icon-wrapper:hover .gtn-Speed-Clock-light,
+.guten-icon-wrapper:hover .gtn-hours-support-light {
+  transform: rotate(18deg) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-shadow)) !important;
+}
+
+/* 11. Category H: Support, Management, Shield & Business Icons */
+.gtn-customer-support-light,
+.gtn-customer-support-2-light,
+.gtn-support1-light,
+.gtn-manager-light,
+.gtn-save-money-light,
+.gtn-money-bill-wave-solid,
+.gtn-shield-light,
+.gtn-protected-content-light,
+.gtn-balance-scale,
+.gtn-ticket-alt-solid,
+.gtn-film-play-light,
+.gtn-hamburger-solid,
+.gtn-quote-light,
+.fa-bullseye,
+.fa-business-time,
+.fa-credit-card,
+.fa-globe,
+.fa-user-circle,
+.fa-eye,
+.fa-film,
+.fa-bars {
+  transition: transform var(--icon-anim-duration) var(--icon-anim-ease), filter var(--icon-anim-duration) ease;
+}
+
+.gtn-customer-support-light:hover,
+.gtn-customer-support-2-light:hover,
+.gtn-support1-light:hover,
+.gtn-manager-light:hover,
+.gtn-save-money-light:hover,
+.gtn-money-bill-wave-solid:hover,
+.gtn-shield-light:hover,
+.gtn-balance-scale:hover,
+.gtn-ticket-alt-solid:hover,
+.gtn-film-play-light:hover,
+.gtn-hamburger-solid:hover,
+.gtn-quote-light:hover,
+.fa-bullseye:hover,
+.fa-business-time:hover,
+.fa-credit-card:hover,
+.fa-globe:hover,
+.fa-user-circle:hover,
+.fa-eye:hover,
+.fa-film:hover,
+.fa-bars:hover,
+.navbar-toggler:hover .fa-bars,
+.service-box:hover .gtn-customer-support-light,
+.service-box:hover .gtn-manager-light,
+.service-box:hover .gtn-save-money-light,
+.service-box:hover .gtn-shield-light,
+.service-box:hover .gtn-ticket-alt-solid,
+.service-box:hover .gtn-film-play-light,
+.service-box:hover .gtn-hamburger-solid,
+.service-box:hover .gtn-quote-light,
+.guten-icon-box:hover .gtn-customer-support-light,
+.guten-icon-box:hover .gtn-manager-light,
+.guten-icon-box:hover .gtn-save-money-light,
+.guten-icon-wrapper:hover .gtn-customer-support-light,
+.guten-icon-wrapper:hover .gtn-manager-light,
+.guten-icon-wrapper:hover .gtn-save-money-light {
+  transform: translateY(var(--icon-lift-y)) scale(var(--icon-hover-scale)) !important;
+  filter: drop-shadow(var(--icon-glow-shadow)) !important;
+}
+
+/* 12. Accessibility: Respect prefers-reduced-motion (WCAG compliant) */
+@media (prefers-reduced-motion: reduce) {
+  i,
+  .gtn,
+  [class*=" gtn-"],
+  [class^="gtn-"],
+  i:hover,
+  .gtn:hover,
+  [class*=" gtn-"]:hover,
+  [class^="gtn-"]:hover,
+  a:hover > i,
+  a:hover > .gtn,
+  button:hover > i,
+  button:hover > .gtn,
+  .service-box:hover i,
+  .service-box:hover .gtn,
+  .guten-icon-box:hover i,
+  .guten-icon-box:hover .gtn,
+  .social-btn:hover i {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* ================================================================
+   13. Left-to-Right Animated Dividers (.wp-block-gutenverse-divider)
+   Smoothly expands divider line from 0% to 100% width from left to right
+   over 1.5s with ease-in-out timing on initial page load and on scroll.
+   ================================================================ */
+@keyframes gutenDividerExpand {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.wp-block-gutenverse-divider .guten-divider-line,
+.guten-divider .guten-divider-line {
+  transform-origin: left center !important;
+  transform: scaleX(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.wp-block-gutenverse-divider.is-revealed .guten-divider-line,
+.guten-divider.is-revealed .guten-divider-line,
+.wp-block-gutenverse-divider .guten-divider-line.is-revealed,
+.guten-divider .guten-divider-line.is-revealed,
+.content-section.is-revealed .wp-block-gutenverse-divider .guten-divider-line,
+.content-section.is-revealed .guten-divider .guten-divider-line {
+  animation: gutenDividerExpand 1.5s ease-in-out forwards !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-gutenverse-divider .guten-divider-line,
+  .guten-divider .guten-divider-line {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+}
+
+noscript .wp-block-gutenverse-divider .guten-divider-line,
+noscript .guten-divider .guten-divider-line,
+.no-js .wp-block-gutenverse-divider .guten-divider-line,
+.no-js .guten-divider .guten-divider-line {
+  transform: none !important;
+}
+
+
+
+
+
+/* ================================================================
+   14. Tekosol Continuous Statistics Section
+   Continuous Flowing Border Animation with Coordinated Timeline
+   Scoped under .tk-stats-section
+   ================================================================ */
+/**
+ * Tekosol - Statistics Showcase Section
+ * Continuous Flowing Border Animation with Coordinated Timeline
+ * Palette: #2c7c6c (Teal) & #03577A (Blue)
+ * Scoped under .tk-stats-section - Zero side effects on existing website styles.
+ */
+
+/* --- Root Section Container --- */
+.tk-stats-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.tk-stats-section *,
+.tk-stats-section *::before,
+.tk-stats-section *::after {
+  box-sizing: inherit;
+}
+
+/* Ambient Corner Glows - Light & Subtle */
+.tk-stats-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tk-stats-glow-teal {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(44, 124, 108, 0.09) 0%, rgba(44, 124, 108, 0) 70%);
+  top: -80px;
+  left: -80px;
+}
+
+.tk-stats-glow-blue {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(3, 87, 122, 0.09) 0%, rgba(3, 87, 122, 0) 70%);
+  bottom: -90px;
+  right: -90px;
+}
+
+/* --- Dotted World Map Background --- */
+.tk-stats-map-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1050px;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.45;
+}
+
+.tk-stats-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tk-map-dots {
+  fill: #2c7c6c;
+  opacity: 0.28;
+  transition: opacity 0.4s ease;
+}
+
+/* --- Responsive Stage & Card Positioning --- */
+.tk-stats-container {
+  position: relative;
+  z-index: 3;
+}
+
+.tk-stats-stage-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Desktop & Tablet Stage (Fixed coordinate system: 960x500) */
+.tk-stats-stage {
+  position: relative;
+  width: 960px;
+  height: 500px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tk-stats-section.tk-visible .tk-stats-stage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Desktop SVG Vector Layer */
+.tk-stats-vectors-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 960px;
+  height: 500px;
+  pointer-events: none;
+  z-index: 6; /* Render precisely aligned over card perimeter */
+  overflow: visible;
+}
+
+/* Faint Guide Ring Tracks */
+.tk-guide-ring {
+  fill: none;
+  stroke-width: 3.5px;
+}
+
+.tk-guide-curve {
+  fill: none;
+  stroke-width: 3.5px;
+}
+
+/* --- Continuous Flowing Pathway --- */
+.tk-flow-path {
+  fill: none;
+  stroke: url(#tkContinuousGrad);
+  stroke-width: 3.5px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 2.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: stroke-dashoffset;
+}
+
+.tk-stats-section.tk-animating .tk-flow-path,
+.tk-stats-section.tk-visible .tk-flow-path {
+  stroke-dashoffset: 0px !important;
+}
+
+/* Subtle Moving Highlight Beam */
+.tk-flow-highlight {
+  fill: none;
+  stroke: url(#tkHighlightGrad);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes tkHighlightTravel {
+  0% {
+    stroke-dashoffset: 1800px;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  85% {
+    opacity: 0.95;
+  }
+  100% {
+    stroke-dashoffset: -120px;
+    opacity: 0;
+  }
+}
+
+.tk-stats-section.tk-highlight-active .tk-flow-highlight {
+  animation: tkHighlightTravel 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+
+
+/* --- Interactive Circular Cards --- */
+.tk-stats-cards-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 960px;
+  height: 500px;
+  z-index: 4;
+}
+
+/* Desktop & Tablet Card absolute positioning */
+@media (min-width: 768px) {
+  .tk-stat-card {
+    position: absolute !important;
+    top: 77px;
+    width: 346px;
+    height: 346px;
+  }
+
+  .tk-stat-card-teal {
+    left: 107px;
+  }
+
+  .tk-stat-card-blue {
+    left: 507px;
+  }
+
+  .tk-mobile-stage-wrapper {
+    display: none !important;
+  }
+}
+
+/* Base Card Styling */
+.tk-stat-card {
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Inner Circular Body */
+.tk-stat-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px;
+  z-index: 5;
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Left Teal Card Specifics */
+.tk-stat-card-teal .tk-stat-card-inner {
+  box-shadow: 0 16px 40px -12px rgba(44, 124, 108, 0.18),
+              0 6px 18px -4px rgba(15, 23, 42, 0.03),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+.tk-stat-card-teal:hover {
+  transform: translateY(-6px) scale(1.012);
+}
+
+.tk-stat-card-teal:hover .tk-stat-card-inner {
+  box-shadow: 0 24px 50px -12px rgba(44, 124, 108, 0.28),
+              0 10px 24px -6px rgba(15, 23, 42, 0.05),
+              inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+/* Right Blue Card Specifics */
+.tk-stat-card-blue .tk-stat-card-inner {
+  box-shadow: 0 16px 40px -12px rgba(3, 87, 122, 0.20),
+              0 6px 18px -4px rgba(15, 23, 42, 0.03),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+.tk-stat-card-blue:hover {
+  transform: translateY(-6px) scale(1.012);
+}
+
+.tk-stat-card-blue:hover .tk-stat-card-inner {
+  box-shadow: 0 24px 50px -12px rgba(3, 87, 122, 0.30),
+              0 10px 24px -6px rgba(15, 23, 42, 0.05),
+              inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+/* --- Card Content: Icons (Step 6 Animation) --- */
+.tk-stat-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 2px;
+  opacity: 0;
+  transform: scale(0.65);
+  transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tk-stats-section.tk-content-revealed .tk-stat-icon-wrapper {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tk-stat-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.4s ease;
+}
+
+.tk-stat-card:hover .tk-stat-icon {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* --- Card Content: Numbers (Step 6 Animation) --- */
+.tk-stat-number-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: #0d2745;
+  line-height: 1;
+  margin: 6px 0 8px;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tk-stats-section.tk-content-revealed .tk-stat-number-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tk-stat-card-teal .tk-stat-number-box {
+  font-size: 78px;
+  letter-spacing: -1px;
+}
+
+.tk-stat-card-blue .tk-stat-number-box {
+  font-size: 64px;
+  letter-spacing: -1px;
+}
+
+.tk-stat-hash {
+  font-size: 0.9em;
+  margin-right: 2px;
+  color: #0d2745;
+  font-weight: 800;
+}
+
+.tk-stat-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+.tk-stat-plus {
+  font-size: 0.85em;
+  margin-left: 2px;
+  color: #0d2745;
+  font-weight: 800;
+}
+
+/* --- Card Content: Labels --- */
+.tk-stat-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #17365d;
+  letter-spacing: -0.2px;
+  margin-bottom: 15px;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.15s;
+}
+
+.tk-stats-section.tk-content-revealed .tk-stat-label {
+  opacity: 1;
+}
+
+/* --- Card Content: Pill Badges --- */
+.tk-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 7px 34px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  user-select: none;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease 0.25s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.tk-stats-section.tk-content-revealed .tk-stat-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tk-stat-card:hover .tk-stat-badge {
+  transform: scale(1.04);
+}
+
+.tk-stat-badge-teal {
+  background: linear-gradient(135deg, #2c7c6c 0%, #1e6255 100%);
+  box-shadow: 0 4px 14px rgba(44, 124, 108, 0.30);
+}
+
+.tk-stat-badge-blue {
+  background: linear-gradient(135deg, #03577A 0%, #023e57 100%);
+  box-shadow: 0 4px 14px rgba(3, 87, 122, 0.32);
+}
+
+/* --- Tablet Breakpoint (768px - 991px) --- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-stats-section {
+    padding: 50px 0 60px;
+  }
+
+  .tk-stats-stage-wrapper {
+    overflow: hidden;
+  }
+
+  .tk-stats-stage {
+    transform: scale(0.74);
+    transform-origin: center top;
+    margin-bottom: -130px; /* Compensate for scaled down height */
+  }
+
+  .tk-stats-section.tk-visible .tk-stats-stage {
+    transform: scale(0.74) translateY(0);
+  }
+}
+
+/* --- Mobile Breakpoint (< 768px) --- */
+@media (max-width: 767px) {
+  .tk-stats-section {
+    padding: 40px 15px 50px;
+  }
+
+  .tk-stats-stage-wrapper {
+    display: none !important;
+  }
+
+  .tk-mobile-stage-wrapper {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tk-stats-section.tk-visible .tk-mobile-stage-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tk-mobile-vectors-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 640px;
+    pointer-events: none;
+    z-index: 6;
+    overflow: visible;
+  }
+
+  .tk-mobile-flow-path {
+    fill: none;
+    stroke: url(#tkMobileContinuousGrad);
+    stroke-width: 3.5px;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: stroke-dashoffset;
+  }
+
+  .tk-stats-section.tk-animating .tk-mobile-flow-path,
+  .tk-stats-section.tk-visible .tk-mobile-flow-path {
+    stroke-dashoffset: 0px !important;
+  }
+
+  .tk-mobile-highlight {
+    fill: none;
+    stroke: url(#tkHighlightGrad);
+    stroke-width: 4px;
+    stroke-linecap: round;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tk-stats-section.tk-highlight-active .tk-mobile-highlight {
+    animation: tkHighlightTravel 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  /* Card 1 & 2 Positioning in Mobile */
+  .tk-stat-card-mob-1 {
+    position: absolute !important;
+    top: 15px;
+    left: 40px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .tk-stat-card-mob-2 {
+    position: absolute !important;
+    top: 345px;
+    left: 40px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .tk-stat-card-inner {
+    padding: 18px;
+  }
+
+  .tk-stat-icon-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .tk-stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .tk-stat-card-teal .tk-stat-number-box {
+    font-size: 60px;
+  }
+
+  .tk-stat-card-blue .tk-stat-number-box {
+    font-size: 50px;
+  }
+
+  .tk-stat-label {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .tk-stat-badge {
+    padding: 6px 26px;
+    font-size: 13.5px;
+  }
+}
+
+/* Narrow mobile viewport scale down (< 360px) */
+@media (max-width: 359px) {
+  .tk-mobile-stage-wrapper {
+    transform: scale(0.88);
+    transform-origin: center top;
+    margin-bottom: -80px;
+  }
+
+  .tk-stats-section.tk-visible .tk-mobile-stage-wrapper {
+    transform: scale(0.88) translateY(0);
+  }
+}
+
+/* --- Accessibility: prefers-reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .tk-stats-stage,
+  .tk-mobile-stage-wrapper,
+  .tk-stat-card,
+  .tk-stat-icon-wrapper,
+  .tk-stat-number-box,
+  .tk-stat-label,
+  .tk-stat-badge,
+  .tk-flow-path,
+  .tk-mobile-flow-path,
+  .tk-flow-highlight,
+  .tk-mobile-highlight {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+.tk-icon-cube path {
+  stroke: #02445f !important;
+}

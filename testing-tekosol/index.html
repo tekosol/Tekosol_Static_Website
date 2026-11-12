@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Preparing Databases for Analytics &#8211; Tekosol Business</title>
+
+		<!-- Favicon -->
+	<link rel="icon" href="../assets/images/fav.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="../assets/images/fav.png" />
+
+	<!-- Google Fonts: Work Sans + Heebo -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/css/custom.css" />
+	<link rel="stylesheet" href="../assets/css/blocks.css" />
+	<link rel="stylesheet" href="../assets/css/templates.css" />
+	<link rel='stylesheet' href='../assets/css/all.min.css' media='all' />
+
+	<!-- Progressive Enhancement: Full Visibility when JavaScript is Disabled -->
+	<noscript>
+		<style>
+			.content-section,
+			.scroll-section,
+			.reveal-on-scroll,
+			.primary-btn-box,
+			.primary-btn,
+			.guten-button-wrapper,
+			.header,
+			.service-box,
+			.insight-card-item,
+			.about-mission-card,
+			.about-values-card,
+			.hero-title,
+			.hero-subtitle,
+			.hero-visual-wrapper,
+			.about-hero-title,
+			.about-hero-text,
+			h1, h2, h3, h4,
+			.wp-block-heading,
+			.wp-block-gutenverse-heading,
+			.about-desc,
+			.services-intro,
+			.cta-desc,
+			.cta-subtitle,
+			.about-cover-desc,
+			.about-cover-quote,
+			.text-content-inner,
+			.client-logos-wrapper,
+			.pro-points-box,
+			.tekosol-footer-col,
+			.wp-block-gutenverse-image {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body class="single single-post tmpl-single tmpl-content-110">
+	<a href="#main-content" class="skip-nav-link visually-hidden-focusable">Skip to main content</a>
+
+	<div id="main-content" class="wp-site-blocks">
+
+		<!-- HEADER -->
+<header class="site-header">
+		<nav class="navbar navbar-expand-lg site-navbar">
+			<div class="container align-items-center">
+				<!-- Brand Logo -->
+				<a class="navbar-brand site-logo" href="../index.html">
+					<img src="../assets/images/Logo_tekosol.png" alt="Tekosol Business" width="266" height="39" />
+				</a>
+
+				<!-- Mobile Hamburger Toggle -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#primaryNavbar" aria-controls="primaryNavbar" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<!-- Main Navigation Menu -->
+				<div class="collapse navbar-collapse justify-content-end" id="primaryNavbar">
+					<ul class="navbar-nav align-items-lg-center">
+						<!-- Services Dropdown -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="../services/index.html" id="servicesDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Services
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+								<li><a class="dropdown-item" href="../managed-services/index.html">Managed Services</a></li>
+								<li><a class="dropdown-item" href="../cloud-infrastructure-services/index.html">Cloud Infrastructure Services</a></li>
+								<li><a class="dropdown-item" href="../enterprise-data-management/index.html">Enterprise Data Management</a></li>
+								<li><a class="dropdown-item" href="../enterprise-software-development/index.html">Enterprise Software Development</a></li>
+								<li><a class="dropdown-item" href="../mobile-and-web-development-services/index.html">Mobile and Web Development Services</a></li>
+								<li><a class="dropdown-item" href="../custom-integration-services/index.html">Custom Integration Services</a></li>
+								<li><a class="dropdown-item" href="../management-information-systems/index.html">Management Information Systems</a></li>
+							</ul>
+						</li>
+
+						<!-- Products Dropdown -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="../products/index.html" id="productsDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Products
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="productsDropdown">
+								<li><a class="dropdown-item" href="../cine-assist/index.html">Cine Assist</a></li>
+								<li><a class="dropdown-item" href="../tek-pay/index.html">Tek-Pay</a></li>
+								<li><a class="dropdown-item" href="../tek-cinema/index.html">TEK-Cinema</a></li>
+								<li><a class="dropdown-item" href="../tek-travel/index.html">TEK-Travel</a></li>
+								<li><a class="dropdown-item" href="../cine-pulse/index.html">Cine Pulse</a></li>
+								<li><a class="dropdown-item" href="../tek-connect/index.html">Tek-Connect</a></li>
+							</ul>
+						</li>
+
+						<!-- About Us Link -->
+						<li class="nav-item">
+							<a class="nav-link" href="../about-us/index.html">About Us</a>
+						</li>
+					</ul>
+
+					<!-- Reach Us CTA Button -->
+					<div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+						<a class="btn btn-reach-us" href="../contact-us/index.html">Reach Us</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+		<!-- PAGE CONTENT -->
+
+		<div class="section-wrapper" data-id="Vnh01w">
+			<section
+				class="wp-block-gutenverse-section guten-element guten-section guten-Vnh01w layout-boxed align-stretch">
+				<div class="guten-background-overlay"></div>
+				<div class="guten-shape-divider guten-shape-divider-top"></div>
+				<div class="guten-shape-divider guten-shape-divider-bottom"></div>
+				<div class="guten-container guten-column-gap-default">
+					<div class="wp-block-gutenverse-column guten-element guten-column guten-x4HI5u">
+						<div class="guten-background-overlay"></div>
+						<div class="sticky-wrapper" data-id="x4HI5u">
+							<div class="guten-column-wrapper">
+								<div class="guten-BvrEQs guten-post-title guten-element">
+									<h1>Preparing Huge Databases for Analytics: A Step-by-Step Guide</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="section-wrapper" data-id="y8sJS0">
+			<section
+				class="wp-block-gutenverse-section guten-element guten-section guten-y8sJS0 layout-boxed align-stretch">
+				<div class="guten-background-overlay"></div>
+				<div class="guten-shape-divider guten-shape-divider-top"></div>
+				<div class="guten-shape-divider guten-shape-divider-bottom"></div>
+				<div class="guten-container guten-column-gap-default">
+					<div class="wp-block-gutenverse-column guten-element guten-column guten-UsAwf9">
+						<div class="guten-background-overlay"></div>
+						<div class="sticky-wrapper" data-id="UsAwf9">
+							<div class="guten-column-wrapper">
+								<div class="guten-3Gq9IU guten-element guten-post-featured-image"><img loading="lazy" width="720" height="720" src="../assets/images/167985492.jpg" class="attachment-full size-full wp-post-image" alt="Preparing Massive Enterprise Databases for High-Performance Analytics" decoding="async" srcset="../assets/images/1679854924822.jpg 720w" sizes="(max-width: 720px) 100vw, 720px" />
+								</div>
+								<div class="section-wrapper" data-id="2I2oj1">
+									<section
+										class="wp-block-gutenverse-section guten-element guten-section guten-2I2oj1 layout-boxed align-stretch">
+										<div class="guten-background-overlay"></div>
+										<div class="guten-shape-divider guten-shape-divider-top"></div>
+										<div class="guten-shape-divider guten-shape-divider-bottom"></div>
+										<div class="guten-container guten-column-gap-no">
+											<div
+												class="wp-block-gutenverse-column guten-element guten-column guten-qoKB4y">
+												<div class="guten-background-overlay"></div>
+												<div class="sticky-wrapper" data-id="qoKB4y">
+													<div class="guten-column-wrapper">
+														<div
+															class="wp-block-gutenverse-icon guten-element guten-3iaLuc guten-icon">
+															<span class="guten-icon-wrapper circle stacked"><i
+																	class="fas fa-user-circle"></i></span>
+														</div>
+														<div class="guten-PvpO7I guten-post-author guten-element">
+															<div class="right-content">
+																<p class="author-name">tekosole</p>
+															</div>
+														</div>
+														<div
+															class="wp-block-gutenverse-icon guten-element guten-yL7ZbY guten-icon">
+															<span class="guten-icon-wrapper circle stacked"><i
+																	class="gtn gtn-folder2-light"></i></span>
+														</div>
+														<div class="guten-tnQ55n guten-post-terms guten-element"><span
+																class='guten-post-terms'><span
+																	class="term-item">example</span>, <span
+																	class="term-item">category</span>, <span
+																	class="term-item">and</span>, <span
+																	class="term-item">terms</span></span></div>
+														<div
+															class="wp-block-gutenverse-icon guten-element guten-QtNtWz guten-icon">
+															<span class="guten-icon-wrapper circle stacked"><i
+																	class="fas fa-calendar-alt"></i></span>
+														</div>
+														<div class="guten-Oq98PI guten-post-date guten-element">
+															<p>June 16, 2023</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div
+									class="guten-G6SbKx entry-content is-layout-constrained guten-post-content guten-element">
+									<p>In the era of big data, businesses are collecting, storing, and analyzing more
+										data than ever before. However, merely having access to massive amounts of data
+										is not enough; organizations must be able to turn this raw data into actionable
+										insights to drive decision-making and create value. This article offers a
+										step-by-step guide to preparing huge databases for analytics, helping you unlock
+										the full potential of your data.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-IGokNU"><strong>Step 1:
+											Define Your Objectives and Requirements</strong></h3>
+									<p>Before diving into the process of preparing your database for analytics,
+										it&#8217;s crucial to clearly define your objectives and requirements. Determine
+										the questions you want to answer with your data and the insights you hope to
+										gain. This will guide your data preparation efforts and ensure you&#8217;re
+										focusing on the most relevant data for your needs.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-iUpgml">
+										<strong><strong>Step 2: Data Collection and Integration</strong></strong>
+									</h3>
+									<p>Gather data from various sources across your organization, such as CRM systems,
+										web analytics, IoT devices, and social media. This data may come in different
+										formats, such as structured (e.g., relational databases) and unstructured (e.g.,
+										text files, images). Integrate this data into a centralized repository, like a
+										data warehouse or data lake, to create a unified view of your data.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-Xd5Cr7">
+										<strong><strong>Step 3: Data Cleaning and Transformation</strong></strong>
+									</h3>
+									<p>Raw data is often messy and contains inconsistencies, duplicates, and missing
+										values. In this step, you&#8217;ll need to clean and transform your data to
+										ensure it&#8217;s accurate and ready for analysis. This includes:</p>
+									<ul class="wp-block-list">
+										<li>Identifying and removing duplicates</li>
+										<li>Filling in or addressing missing values</li>
+										<li>Correcting data entry errors</li>
+										<li>Standardizing and normalizing data formats</li>
+									</ul>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-f7LhBi"><strong>Step 4:
+											Data Enrichment</strong></h3>
+									<p>Enrich your data by adding additional context, attributes, or external
+										information. This might involve geocoding addresses, adding demographic
+										information, or incorporating industry-specific data. Data enrichment enhances
+										the value of your data by providing additional dimensions for analysis.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-7LtaDf">
+										<strong><strong>Step 5: Feature Engineering</strong></strong>
+									</h3>
+									<p>Feature engineering involves selecting the most relevant variables (features) for
+										your analysis and creating new ones from existing data. This step is crucial for
+										improving the performance of machine learning models and uncovering hidden
+										patterns in your data. Examples of feature engineering include:</p>
+									<ul class="wp-block-list">
+										<li>Combining or aggregating variables</li>
+										<li>Creating interaction terms between variables</li>
+										<li>Applying mathematical transformations</li>
+									</ul>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-2UseXQ"><strong>Step 6:
+											Data Partitioning</strong></h3>
+									<p>Split your data into training, validation, and test sets. This ensures that your
+										analytics models are trained on one subset of the data and evaluated on another,
+										unseen subset. This partitioning process helps prevent overfitting and ensures
+										that your models generalize well to new data.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-sq7kik">
+										<strong><strong>Step 7: Model Selection and Training</strong></strong>
+									</h3>
+									<p>Choose appropriate analytical models and algorithms based on your objectives and
+										the nature of your data. Train these models on your prepared data, adjusting
+										hyperparameters and model architecture as needed to optimize performance.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-0Qcoi7">
+										<strong><strong><strong>Step 8: Model Evaluation and
+													Validation</strong></strong></strong>
+									</h3>
+									<p>Evaluate your models&#8217; performance using appropriate metrics (e.g.,
+										accuracy, precision, recall) and cross-validation techniques. Compare the
+										performance of different models and fine-tune them to achieve the best results.
+									</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-AeDMZR">
+										<strong><strong><strong><strong>Step 9: Deployment and
+														Integration</strong></strong></strong></strong>
+									</h3>
+									<p>Once you&#8217;ve chosen and refined the best models, deploy them into production
+										and integrate them with your existing systems and processes. This step allows
+										you to start generating insights and using them to inform decision-making across
+										your organization.</p>
+									<h3 class="wp-block-gutenverse-heading guten-element guten-N39m6X">
+										<strong><strong><strong><strong><a href="#conclusion">Step 9: Deployment and
+															Integration</a></strong></strong></strong></strong>
+									</h3>
+									<p>Preparing huge databases for analytics is a complex but essential process for any
+										organization looking to leverage its data for better decision-making. By
+										following the steps outlined in this guide, you&#8217;ll be well on your way to
+										unlocking the full potential of your data and driving value for your business.
+									</p>
+								</div>
+								<div class="section-wrapper" data-id="gNstMb">
+									<section
+										class="wp-block-gutenverse-section guten-element guten-section guten-gNstMb layout-boxed align-stretch">
+										<div class="guten-background-overlay"></div>
+										<div class="guten-shape-divider guten-shape-divider-top"></div>
+										<div class="guten-shape-divider guten-shape-divider-bottom"></div>
+										<div class="guten-container guten-column-gap-no">
+											<div
+												class="wp-block-gutenverse-column guten-element guten-column guten-lmiNP3">
+												<div class="guten-background-overlay"></div>
+												<div class="sticky-wrapper" data-id="lmiNP3">
+													<div class="guten-column-wrapper">
+														<h6
+															class="wp-block-gutenverse-heading guten-element guten-bA2c6L">
+															Share this</h6>
+													</div>
+												</div>
+											</div>
+											<div
+												class="wp-block-gutenverse-column guten-element guten-column guten-QvLDdz">
+												<div class="guten-background-overlay"></div>
+												<div class="sticky-wrapper" data-id="QvLDdz">
+													<div class="guten-column-wrapper">
+														<div
+															class="guten-element guten-social-share guten-7biZ0X horizontal guten-social-share">
+															<div class='gutenverse-share-facebook gutenverse-share-item'
+																id='guten-y2RHIx'> <a target='_blank'
+																	href='https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.tekosol.com%2Ftesting-tekosol%2F'
+																	aria-label='Share on Facebook'>
+																	<div class="gutenverse-share-icon">
+																		<div class="gutenverse-icon-svg"> <svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				viewBox="0 0 320 512">
+																				<path
+																					d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+																			</svg> </div>
+																	</div>
+																</a> </div>
+															<div class='gutenverse-share-twitter gutenverse-share-item twitter'
+																id='guten-C30G60'> <a target='_blank'
+																	href='https://twitter.com/intent/tweet?text=Preparing%20Huge%20Databases%20for%20Analytics:%20A%20Step-by-Step%20Guide&amp;url=https%3A%2F%2Fwww.tekosol.com%2Ftesting-tekosol%2F'
+																	aria-label='Share on Twitter'>
+																	<div class="gutenverse-share-icon">
+																		<div class="gutenverse-icon-svg"> <svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				viewBox="0 0 512 512">
+																				<path
+																					d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+																			</svg> </div>
+																	</div>
+																</a> </div>
+															<div class='gutenverse-share-whatsapp gutenverse-share-item'
+																id='guten-IGhlaM'> <a target='_blank'
+																	href='http://api.whatsapp.com/send?text=Preparing%20Huge%20Databases%20for%20Analytics:%20A%20Step-by-Step%20Guidehttps%3A%2F%2Fwww.tekosol.com%2Ftesting-tekosol%2F'
+																	aria-label='Share on Whatsapp'>
+																	<div class="gutenverse-share-icon">
+																		<div class="gutenverse-icon-svg"> <svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				viewBox="0 0 448 512">
+																				<path
+																					d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+																			</svg> </div>
+																	</div>
+																</a> </div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="wp-block-gutenverse-divider guten-element guten-divider guten-fcjC1G">
+									<div class="guten-divider-wrapper">
+										<div class="guten-divider-default guten-divider-line guten-divider-regular">
+										</div>
+									</div>
+								</div>
+								<div class="guten-DqdO8W guten-post-comment guten-element">
+									<div class="comment-form"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+
+		<!-- FOOTER -->
+	<!-- Shape Wave Divider Transition to Soft-Gray Footer -->
+	<div class="footer-shape-divider">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+			<path fill="#f7f7f7" d="M0,0 C150,90 400,100 500,100 C600,100 850,90 1000,0 L1000,100 L0,100 Z"></path>
+		</svg>
+	</div>
+
+	<!-- ============================================================
+	     FOOTER (Soft-Gray Background #f7f7f7)
+	     ============================================================ -->
+	<footer class="site-footer">
+		<div class="container">
+			<!-- Header Badge -->
+			<div class="header mb-4">Get <span>Connected</span></div>
+
+			<div class="row align-items-start">
+				<!-- Left Column: Talk & Menu Links -->
+				<div class="col-lg-7 mb-4 mb-lg-0">
+					<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+						<h3 class="footer-talk-heading">We Build an amazing experience together</h3>
+						<div class="primary-btn-box">
+							<a class="theme-footer-btn" href="../contact-us/index.html">
+								<span>Let&#8217;s Talk</span>
+							</a>
+						</div>
+					</div>
+
+					<div class="footer-nav-divider">
+						<ul class="footer-menu-links">
+							<li><a href="../products/index.html">Products</a></li>
+							<li><a href="../services/index.html">Services</a></li>
+							<li><a href="../about-us/index.html">About Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Right Column: Logo, Copyrights, Terms, Locations, Socials -->
+				<div class="col-lg-5 tekosol-footer-col">
+					<img src="../assets/images/tekosol-gray-1.png" alt="Tekosol" class="footer-logo"
+						width="220" height="33" />
+					<p class="footer-copyright">&copy; 2023 Tekosol. All rights reserved</p>
+
+					<div class="footer-terms-links">
+						<a href="mailto:info@tekosol.com">info@tekosol.com</a>
+						<a href="#" aria-label="Terms and Conditions (coming soon)" title="Terms and Conditions">Terms</a>
+					</div>
+
+					<div class="footer-locations">
+						<span>Kochi</span>
+						<span>Dubai</span>
+						<span>Bangalore</span>
+					</div>
+
+					<!-- Social Media Icons -->
+					<div class="social-links">
+						<a href="https://twitter.com/tekosolg" class="social-btn" target="_blank"
+							rel="noreferrer noopener" aria-label="Twitter">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="https://www.facebook.com/tekosolglobal" class="social-btn" target="_blank"
+							rel="noreferrer noopener" aria-label="Facebook">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="https://www.linkedin.com/company/tekosol" class="social-btn" target="_blank"
+							rel="noreferrer noopener" aria-label="LinkedIn">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+						<a href="#" class="social-btn" aria-label="YouTube">
+							<i class="fab fa-youtube"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	</div><!-- /.wp-site-blocks -->
+
+	<!-- Scripts -->
+	<script src="../assets/js/lenis.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
